@@ -40,7 +40,7 @@ nil
 #   })
 #
 # member4.save()
-
+#
 # member5 = Member.new({
 #   "first_name" => "Martha",
 #   "last_name" => "Gilles",
@@ -49,7 +49,7 @@ nil
 #   })
 #
 # member5.save()
-
+#
 # class1 = Class.new({
 #   "class_name" => "Yin Yoga",
 #   "category" => "Beginner"

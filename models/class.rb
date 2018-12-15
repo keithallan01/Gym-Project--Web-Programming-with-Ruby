@@ -1,4 +1,4 @@
-require_relative('../db/sql_runner')
+require_relative( '../db/sql_runner' )
 
 class Class
 
@@ -12,23 +12,27 @@ attr_accessor :class_name, :category
   end
 
   def save()
-    sql = "INSERT INTO class (
+    sql = "INSERT INTO classes
+    (
     class_name,
-    category)
-    VALUES(
+    category
+    )
+    VALUES
+    (
     $1, $2
-    ) RETURNING *"
+    )
+    RETURNING *"
     values = [@class_name, @category]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
 
-  def class_name
-    return @class_name
-  end
-
-  def category
-    return @category
-  end
+  # def class_name
+  #   return @class_name
+  # end
+  #
+  # def category
+  #   return @category
+  # end
 
 end
