@@ -21,18 +21,18 @@ attr_accessor :class_name, :category
     (
     $1, $2
     )
-    RETURNING *"
+    RETURNING id"
     values = [@class_name, @category]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
 
-  # def class_name
-  #   return @class_name
-  # end
-  #
-  # def category
-  #   return @category
-  # end
+  def class_name
+    return @class_name
+  end
+
+  def category
+    return @category
+  end
 
 end

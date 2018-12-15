@@ -13,6 +13,7 @@ class TestClass < Minitest::Test
     @class = Class.new(options)
   end
 
+
   def test_class_has_name
     assert_equal("Yin Yoga", @class.class_name)
   end

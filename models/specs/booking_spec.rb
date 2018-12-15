@@ -9,7 +9,7 @@ class TestBooking < Minitest::Test
       "id" => 1,
       "studio_name" => "Serenity Now!",
       "member_id" => 1,
-      "class_id" => 1,
+      "class_id" => 1
     }
     @booking = Booking.new(options)
   end

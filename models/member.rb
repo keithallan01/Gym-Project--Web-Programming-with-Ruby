@@ -1,4 +1,4 @@
-require_relative( '../sql_runner' )
+require_relative( '../db/sql_runner' )
 
 class Member
 
@@ -26,12 +26,15 @@ class Member
     (
     $1, $2, $3, $4
     )
-    RETURNING *"
+    RETURNING id"
     values = [@first_name, @last_name, @address, @age]
-    results = SqlRunner.run(sql,values)
+    results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
 
+
+  #
+  #
   # def first_name
   #   return @first_name
   # end
@@ -51,7 +54,7 @@ class Member
   # def full_name
   #   return "#{@first_name} #{@last_name}"
   # end
-  #
-  #
+
+
 
 end

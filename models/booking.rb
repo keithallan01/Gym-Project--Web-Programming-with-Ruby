@@ -7,9 +7,9 @@ class Booking
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
-    @studio_name = options['studio_name']
     @member_id = options['member_id'].to_i
     @class_id = options['class_id'].to_i
+    @studio_name = options['studio_name']
   end
 
   def save()
@@ -23,23 +23,23 @@ class Booking
     (
     $1, $2, $3
     )
-    RETURNING *"
+    RETURNING id"
     values = [@studio_name, @member_id, @class_id]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
 
-  #
-  # def member_id
-  #   return @member_id
-  # end
-  #
-  # def class_id
-  #   return @class_id
-  # end
-  #
-  # def studio_name
-  #   return @studio_name
-  # end
+
+  def member_id
+    return @member_id
+  end
+
+  def class_id
+    return @class_id
+  end
+
+  def studio_name
+    return @studio_name
+  end
 
 end

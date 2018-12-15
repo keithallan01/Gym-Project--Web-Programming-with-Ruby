@@ -1,7 +1,7 @@
-require_relative('../models/class')
-require_relative('../models/member')
-require_relative('../models/booking')
-require('pry-byebug')
+require_relative('../models/class.rb')
+require_relative('../models/member.rb')
+require_relative('../models/booking.rb')
+require('pry')
 
 member1 = Member.new({
   "first_name" => "Keith",
