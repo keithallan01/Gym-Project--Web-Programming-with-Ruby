@@ -1,12 +1,12 @@
 DROP TABLE bookings;
-DROP TABLE classes;
+DROP TABLE activities;
 DROP TABLE members;
 
 
-CREATE TABLE classes
+CREATE TABLE activities
 (
   id SERIAL8 PRIMARY KEY,
-  class_name VARCHAR(255),
+  activity_name VARCHAR(255),
   category VARCHAR(255)
 );
 
@@ -24,5 +24,5 @@ CREATE TABLE bookings
   id SERIAL8 PRIMARY KEY,
   studio_name VARCHAR(255),
   member_id INT4 REFERENCES members(id) ON DELETE CASCADE,
-  class_id INT4 REFERENCES classes(id) ON DELETE CASCADE
+  activity_id INT4 REFERENCES activities(id) ON DELETE CASCADE
 );
