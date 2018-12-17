@@ -33,6 +33,52 @@ class Activity
     return results.map { |activity| Activity.new( activity ) }
   end
 
+  def update()
+    sql = "UPDATE activites
+    SET
+    (
+      activity_name,
+      category
+    ) =
+    (
+      $1, $2
+    )
+   WHERE id = $3"
+   values = [@activity_name, @category, @id]
+   SqlRunner.run(sql, values)
+  end
+
+  def self.find(id)
+  sql = "SELECT * FROM activities
+  WHERE id = $1"
+  values = [id]
+  result = SqlRunner.run(sql, values).first
+  activity = Activity.new(result)
+  return activity
+end
+
+  def delete()
+      sql = "DELETE FROM activities
+      WHERE id = $1"
+      values = [@id]
+      SqlRunner.run(sql, values)
+    end
+
+  def self.delete_all()
+    sql = " DELETE FROM activities"
+    SqlRunner.run(sql)
+  end
+
+  def members()
+    sql = "SELECT members.*
+    FROM members
+    INNER JOIN bookings
+    ON bookings.member_id = members.id
+    WHERE bookings.member_id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return results.map{ |member| Member.new(member) }
+  end
 
   def activity_name
     return @activity_name

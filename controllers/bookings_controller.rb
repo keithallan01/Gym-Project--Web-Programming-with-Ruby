@@ -1,0 +1,6 @@
+require('sinatra')
+require('sinatra/conrtib/all')
+require('pry-byebug')
+require_relative('../models/booking.rb')
+require_relative('../models/activity.rb')
+require_relative('../models/member.rb')

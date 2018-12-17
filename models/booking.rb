@@ -35,7 +35,54 @@ class Booking
     return results.map { |booking| Booking.new( booking ) }
   end
 
-  def delete_all()
+  def update()
+    sql = "UPDATE activites
+    SET
+    (
+      studio_name,
+      member_id,
+      activity_id
+    ) =
+    (
+      $1, $2, $3
+    )
+   WHERE id = $4"
+   values = [@studio_name, @member_id, @activity_id, @id]
+   SqlRunner.run(sql, values)
+ end
+
+ def self.find(id)
+  sql = "SELECT * FROM bookings
+  WHERE id = $1"
+  values = [id]
+  result = SqlRunner.run(sql, values).first
+  booking = Booking.new(result)
+  return booking
+end
+
+def members()
+  sql = "SELECT * FROM members
+  WHERE id = $1"
+  values = [@member_id]
+  member = SqlRunner.run(sql, values)
+  return Member.new(member.first)
+end
+
+def activities()
+  sql = "SELECT * FROM activities WHERE id = $1"
+  values = [@activity_id]
+  activity = SqlRunner.run(sql, values)
+  return Activity.new(activity.first)
+end
+
+  def delete()
+    sql = "DELETE FROM bookings
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+    end
+
+  def self.delete_all()
     sql = " DELETE FROM bookings"
     SqlRunner.run(sql)
   end
