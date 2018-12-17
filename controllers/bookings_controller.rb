@@ -16,10 +16,10 @@ end
 
 # # show
 #
-# get '/bookings/:id' do
-#   @bookings = Booking.find(params[:id])
-#   erb( :"bookings/show" )
-# end
+get '/bookings/:id' do
+  @bookings = Booking.find(params[:id])
+  erb( :"bookings/show" )
+end
 #
 # # new
 get '/bookings/new' do
