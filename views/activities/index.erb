@@ -1,0 +1,17 @@
+<h1>Activities</h1>
+
+<table>
+  <tr>
+    <th>Activity</th>
+    <th></th>
+    <th>Category</th>
+  </tr>
+  <% for activity in @activities %>
+  <tr>
+    <td><a href="/activities/<%= activity.id %>"><%= activity.activity_name %></a></td>
+    <td>|</td>
+    <td><%= activity.category %></td>
+  </tr>
+  <% end %>
+</table>
+<a href="/activities/new">Add a New Activity</a>

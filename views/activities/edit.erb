@@ -1,0 +1,20 @@
+<h2>Edit Activity <%= @activities.activity_name %></h2>
+<form method="POST" action="/activities/<%= @activities.id %>">
+  <div class="form-wrapper">
+
+    <div class="form-el">
+      <label for="activity_name">Activity Name:</label>
+      <input type="text" name="activity_name" id="activity_name" value="<%= @activities.activity_name %>"/>
+    </div>
+
+    <div class="form-el">
+      <label for="category">Category:</label>
+      <input type="text" name="category" id="category" value="<%= @activities.category%>"/>
+    </div>
+
+    <div class="form-el">
+      <input type="submit" value="Edit Activity"/>
+    </div>
+
+  </div>
+</form>

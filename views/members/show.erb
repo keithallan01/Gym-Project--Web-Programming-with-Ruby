@@ -1,0 +1,8 @@
+<h2><%= @members.full_name%></h2>
+
+<p>Age: <%= @members.age %></p>
+
+<p>Address: <%= @members.address %></p>
+
+<a href="/members/<%= @members.id %>/edit">Edit</a>
+<form action="/members/<%= @members.id %>/delete" method="POST"><input type="submit" value="Delete"></form>

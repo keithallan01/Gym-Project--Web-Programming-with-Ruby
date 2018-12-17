@@ -34,7 +34,7 @@ class Activity
   end
 
   def update()
-    sql = "UPDATE activites
+    sql = "UPDATE activities
     SET
     (
       activity_name,
