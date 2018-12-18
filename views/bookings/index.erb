@@ -1,1 +1,20 @@
 <h1> This is the bookings page for Serenity Now! Yoga Studio. </h1>
+
+<table>
+  <tr>
+    <th>Member</th>
+    <th></th>
+    <th>Activity</th>
+  </tr>
+  <% for booking in @bookings %>
+  <tr>
+    <td><%= booking.member_id%></td>
+    <td><%= booking.activity_id%></td>
+    <td><form action="/bookings/<%= booking.id %>/delete" method="POST"><input type="submit" value="Cancel Booking"></form></td>
+  </tr>
+  <% end %>
+</table>
+
+<hr>
+
+<a href="/bookings/new">Add a New Booking</a>

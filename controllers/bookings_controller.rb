@@ -11,16 +11,12 @@ also_reload('./models/*')
 
 get '/bookings' do
   @bookings = Booking.all
+  @activities = Activity.all
+  @members = Member.all
   erb( :"bookings/index")
 end
 
-# # show
-#
-get '/bookings/:id' do
-  @bookings = Booking.find(params[:id])
-  erb( :"bookings/show" )
-end
-#
+
 # # new
 get '/bookings/new' do
   @members = Member.all
@@ -35,7 +31,14 @@ post '/bookings' do
   booking.save
   redirect to("/bookings")
 end
-#
+
+
+# # show
+
+# get '/bookings/:id' do
+#   @bookings = Booking.find(params[:id])
+#   erb( :"bookings/show" )
+# end
 # # edit
 # get '/bookings/:id/edit' do
 #   @bookings = Booking.find(params[:id])
