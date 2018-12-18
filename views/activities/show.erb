@@ -1,15 +1,22 @@
 <h2><%= @activities.activity_name%></h2>
 
 <p>Category: <%= @activities.category %></p>
-<p><strong>Power yoga</strong> is a general term used to describe a vigorous, fitness-based approach to vinyasa-style yoga. Though many consider power yoga to be superficial "gym yoga," this style of yoga practice was originally closely modeled on the Ashtanga method.</p>
-<p>Power yoga incorporates the athleticism of Ashtanga, including lots of vinyasas (series of poses done in sequence) but gives each teacher the flexibility to teach any poses in any order, making every class different. With its emphasis on strength and flexibility, power yoga brought yoga into the gyms of America as people began to see yoga as a way to work out.</p>
 
-<p><strong>Vinyasa Yoga, or Flow Yoga,</strong> describes yoga when it consists of a dynamic sequence of poses connected to the breath. </p>
-<p>Sun salutations are the most well-known kind of vinyasa sequence. Each inhale and exhale goes along with a specific movement. That doesn’t mean that you won’t stay in an asana longer than one breath in a Vinyasa class, but there will be more emphasis on the sequence itself and transitions between each asana.</p>
+<p> Description: <%= @activities.description %> </p>
 
-<p><strong>Yin Yoga</strong> is a slow-paced style of yoga with postures, or asanas, that are held for longer periods of time—for beginners, it may range from 45 seconds to two minutes; more advanced practitioners may stay in one asana for five minutes or more.</p>
+<table>
+  <tr>
+    <th>Members Booked into <%= @activities.activity_name%></th>
+  </tr>
+  <tr>
+  <% @activities.members.each do |member| %>
+  <tr>
+    <td><%= member.full_name %></td>
+  </tr>
+  <% end %>
+</table>
+<hr>
 
-<p><strong>Rocket Yoga</strong> is a yoga sequence developed by Larry Schultz in San Francisco during the 1980s. ROCKET is rooted in the Ashtanga Vinyasa Yoga practice of yoga. Schultz's yoga method was first called "The ROCKET" by Bob Weir of <a href ="https://en.wikipedia.org/wiki/Grateful_Dead" target="_blank">The Grateful Dead</a>, because Weir said, "It gets you there faster.</p>
 
 <a href="/activities/<%= @activities.id %>/edit">Edit</a>
 <form action="/activities/<%= @activities.id %>/delete" method="POST"><input type="submit" value="Delete"></form>

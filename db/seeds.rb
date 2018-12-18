@@ -30,8 +30,6 @@ member3 = Member.new({
   })
 member3.save()
 
-
-
 member4 = Member.new({
   "first_name" => "Sean",
   "last_name" => "Kenna",
@@ -52,28 +50,32 @@ member5.save()
 
 activity1 = Activity.new({
   "activity_name" => "Yin Yoga",
-  "category" => "Beginner"
+  "category" => "Beginner",
+  "description" => "Yin Yoga is a slow-paced style of yoga with postures, or asanas, that are held for longer periods of time—for beginners, it may range from 45 seconds to two minutes; more advanced practitioners may stay in one asana for five minutes or more."
   })
 
 activity1.save()
 
 activity2 = Activity.new({
   "activity_name" => "Rocket",
-  "category" => "Advanced"
+  "category" => "Advanced",
+  "description" => "Rocket Yoga is a yoga sequence developed by Larry Schultz in San Francisco during the 1980s. ROCKET is rooted in the Ashtanga Vinyasa Yoga practice of yoga. Schultz's yoga method was first called 'The ROCKET' by Bob Weir ofThe Grateful Dead, because Weir said, 'It gets you there faster.' "
   })
 
 activity2.save()
 
 activity3 = Activity.new({
   "activity_name" => "Vinyasa",
-  "category" => "Intermediate"
+  "category" => "Intermediate",
+  "description" => "Vinyasa Yoga, or Flow Yoga, describes yoga when it consists of a dynamic sequence of poses connected to the breath. Sun salutations are the most well-known kind of vinyasa sequence. Each inhale and exhale goes along with a specific movement. That doesn’t mean that you won’t stay in an asana longer than one breath in a Vinyasa class, but there will be more emphasis on the sequence itself and transitions between each asana."
   })
 
 activity3.save()
 
 activity4 = Activity.new({
   "activity_name" => "Power",
-  "category" => "Intermediate"
+  "category" => "Intermediate",
+  "description" => "Power Yoga is a general term used to describe a vigorous, fitness-based approach to vinyasa-style yoga. Though many consider power yoga to be superficial 'gym yoga,' this style of yoga practice was originally closely modeled on the Ashtanga method. Power yoga incorporates the athleticism of Ashtanga, including lots of vinyasas (series of poses done in sequence) but gives each teacher the flexibility to teach any poses in any order, making every class different. With its emphasis on strength and flexibility, power yoga brought yoga into the gyms of America as people began to see yoga as a way to work out."
   })
 
 activity4.save()

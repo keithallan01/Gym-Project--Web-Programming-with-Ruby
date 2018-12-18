@@ -3,26 +3,28 @@ require_relative( '../db/sql_runner' )
 class Activity
 
   attr_reader :id
-  attr_accessor :activity_name, :category
+  attr_accessor :activity_name, :category, :description
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
     @activity_name = options['activity_name']
     @category = options['category']
+    @description = options['description']
   end
 
   def save()
     sql = "INSERT INTO activities
     (
       activity_name,
-      category
+      category,
+      description
     )
     VALUES
     (
-      $1, $2
+      $1, $2, $3
     )
     RETURNING id"
-    values = [@activity_name, @category]
+    values = [@activity_name, @category, @description]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -38,13 +40,14 @@ class Activity
     SET
     (
       activity_name,
-      category
+      category,
+      description
     ) =
     (
-      $1, $2
+      $1, $2, $3
     )
-   WHERE id = $3"
-   values = [@activity_name, @category, @id]
+   WHERE id = $4"
+   values = [@activity_name, @category, @description, @id]
    SqlRunner.run(sql, values)
   end
 
@@ -74,7 +77,7 @@ end
     FROM members
     INNER JOIN bookings
     ON bookings.member_id = members.id
-    WHERE bookings.member_id = $1"
+    WHERE bookings.activity_id = $1"
     values = [@id]
     results = SqlRunner.run(sql, values)
     return results.map{ |member| Member.new(member) }
@@ -87,4 +90,9 @@ end
   def category
     return @category
   end
+
+  def description
+    return @description
+  end
+  
 end

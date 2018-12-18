@@ -3,13 +3,11 @@
 <table>
   <tr>
     <th>Activity</th>
-    <th></th>
     <th>Category</th>
   </tr>
   <% for activity in @activities %>
   <tr>
     <td><a href="/activities/<%= activity.id %>"><%= activity.activity_name %></a></td>
-    <td>|</td>
     <td><%= activity.category %></td>
   </tr>
   <% end %>

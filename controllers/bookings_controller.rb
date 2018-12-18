@@ -23,9 +23,9 @@ get '/bookings/new' do
   @activities = Activity.all
   erb(:"bookings/new")
 end
-#
-# # create
-#
+
+# create
+
 post '/bookings' do
   booking = Booking.new(params)
   booking.save
@@ -33,7 +33,7 @@ post '/bookings' do
 end
 
 
-# # show
+# show
 
 # get '/bookings/:id' do
 #   @bookings = Booking.find(params[:id])
@@ -44,7 +44,7 @@ end
 #   @bookings = Booking.find(params[:id])
 #   erb(:"bookings/edit")
 # end
-#
+# #
 #
 # # update
 #
@@ -56,8 +56,8 @@ end
 #
 #
 # # delete
-#
-post '/booking/:id/delete' do
+
+post '/bookings/:id/delete' do
   Booking.delete(params[:id])
   redirect to("/bookings")
 end
