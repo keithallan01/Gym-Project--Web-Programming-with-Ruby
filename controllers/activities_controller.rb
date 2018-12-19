@@ -1,9 +1,8 @@
-# require('sinatra')
-# require('sinatra/conrtib/all')
+
 require_relative('../models/activity.rb')
 also_reload('./models/*')
-#
-# # index
+
+# index
 
 get '/activities' do
   @activities = Activity.all()

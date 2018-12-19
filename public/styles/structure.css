@@ -4,12 +4,11 @@ body {
   background-image: url("../images/seinfeld_yoga.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
-  color: #15A4E2;
+  color: rgb(228, 15, 47);
   font-family: 'Arvo', serif;
 
 }
-
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3 {
   font-family: 'Arvo', serif;
   margin: 0px;
   padding: 0px;
@@ -22,7 +21,7 @@ h1 {
 }
 
 a {
-  color: #E2861E;
+  color: rgb(30, 177, 238);
   text-decoration: none;
   padding-bottom: 20px;
 }
@@ -45,9 +44,29 @@ ul {
 }
 
 main {
-  padding: 25px;
+  padding: 20px;
 }
 
+td, th {
+  text-align: left;
+  padding-bottom: 10px;
+  font-size: 1.3em;
+}
+
+td {
+  padding: 10px 20px 0px 0px;
+  background-color: inherit;
+}
+
+th {
+  padding: 0px 20px 10px 0px;
+  border-bottom: 1px solid black;
+}
+
+table {
+  background: none;
+  border-collapse: collapse;
+}
 
 .flex {
   display: flex;
@@ -57,17 +76,14 @@ main {
   flex-direction: row;
 }
 
-
-
 #content {
   border-left: 1px solid black;
   padding-left: 25px;
-  background-color: rgba(254, 254, 254, .7);
+  background-color: rgba(250, 214, 58, .9  );
   padding: 30px;
 }
 
 #logo {
 width: 200px;
 height: auto;
-
 }

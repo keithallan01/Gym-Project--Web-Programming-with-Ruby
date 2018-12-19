@@ -21,7 +21,6 @@ member2 = Member.new({
   })
 member2.save()
 
-
 member3 = Member.new({
   "first_name" => "Elaine",
   "last_name" => "Benes",
@@ -83,7 +82,6 @@ activity4 = Activity.new({
 })
 
 activity4.save()
-
 
 booking1 = Booking.new({
   "studio_name" => "Serenity Now!",

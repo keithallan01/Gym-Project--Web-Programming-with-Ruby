@@ -38,17 +38,6 @@ class Member
     return results.map { |member| Member.new( member ) }
   end
 
- #  def self.all()
- #   sql = "SELECT * FROM members"
- #   member_data = SqlRunner.run(sql)
- #   members = map_items(member_data)
- #   return members
- # end
- #
- # def self.map_items(member_data)
- #   return member_data.map { |member| Member.new(member) }
- # end
-
   def update()
     sql = "UPDATE members
     SET
@@ -97,7 +86,6 @@ class Member
     return results.map{ |activity| Activity.new(activity) }
   end
 
-
   def first_name
     return @first_name
   end
@@ -117,7 +105,4 @@ class Member
   def full_name
     return "#{@first_name} #{@last_name}"
   end
-
-
-
 end

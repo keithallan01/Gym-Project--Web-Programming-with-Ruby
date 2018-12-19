@@ -16,7 +16,6 @@ class TestMember < Minitest::Test
 end
 
   def test_first_name()
-    # @member1 = Member.new("Keith", "Allan")
     assert_equal("Keith", @member.first_name)
   end
 
