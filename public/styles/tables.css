@@ -1,5 +1,7 @@
 td, th {
   text-align: left;
+  padding-bottom: 10px;
+  font-size: 1.3em;
 }
 
 td {

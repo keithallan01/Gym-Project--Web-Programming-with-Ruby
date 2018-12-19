@@ -3,13 +3,14 @@ require_relative( '../db/sql_runner' )
 class Activity
 
   attr_reader :id
-  attr_accessor :activity_name, :category, :description
+  attr_accessor :activity_name, :category, :description, :capacity
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
     @activity_name = options['activity_name']
     @category = options['category']
     @description = options['description']
+    @capacity = options['capacity'].to_i
   end
 
   def save()
@@ -17,14 +18,15 @@ class Activity
     (
       activity_name,
       category,
-      description
+      description,
+      capacity
     )
     VALUES
     (
-      $1, $2, $3
+      $1, $2, $3, $4
     )
     RETURNING id"
-    values = [@activity_name, @category, @description]
+    values = [@activity_name, @category, @description, @capacity]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -41,13 +43,14 @@ class Activity
     (
       activity_name,
       category,
-      description
+      description,
+      capacity
     ) =
     (
-      $1, $2, $3
+      $1, $2, $3, $4
     )
-   WHERE id = $4"
-   values = [@activity_name, @category, @description, @id]
+   WHERE id = $5"
+   values = [@activity_name, @category, @description, @capacity, @id]
    SqlRunner.run(sql, values)
   end
 
@@ -94,5 +97,13 @@ end
   def description
     return @description
   end
-  
+
+  def capacity
+    return @capacity
+  end
+
+  def available_slots
+    return @capacity - members.count
+  end
+
 end

@@ -5,8 +5,8 @@ require_relative('../models/member')
 require('pry')
 
 member1 = Member.new({
-  "first_name" => "Keith",
-  "last_name" => "Allan",
+  "first_name" => "Cosmo",
+  "last_name" => "Kramer",
   "address" => "High St, Edinburgh",
   "age" => 30
  })
@@ -14,8 +14,8 @@ member1 = Member.new({
 member1.save()
 
 member2 = Member.new({
-  "first_name" => "Helen",
-  "last_name" => "Gillespie",
+  "first_name" => "Jerry",
+  "last_name" => "Seinfeld",
   "address" => "Castle Terrace, Edinburgh",
   "age" => 31
   })
@@ -23,16 +23,16 @@ member2.save()
 
 
 member3 = Member.new({
-  "first_name" => "Iona",
-  "last_name" => "Geddes",
+  "first_name" => "Elaine",
+  "last_name" => "Benes",
   "address" => "Main St, Mussleburgh",
   "age" => 25
   })
 member3.save()
 
 member4 = Member.new({
-  "first_name" => "Sean",
-  "last_name" => "Kenna",
+  "first_name" => "George",
+  "last_name" => "Costanza",
   "address" => "Hamilton Pl, Edinburgh",
   "age" => 27
   })
@@ -40,8 +40,8 @@ member4 = Member.new({
 member4.save()
 
 member5 = Member.new({
-  "first_name" => "Martha",
-  "last_name" => "Gilles",
+  "first_name" => "Tim",
+  "last_name" => "Whatley",
   "address" => "Laurieston Pl, Edinburgh",
   "age" => 45
   })
@@ -51,7 +51,8 @@ member5.save()
 activity1 = Activity.new({
   "activity_name" => "Yin Yoga",
   "category" => "Beginner",
-  "description" => "Yin Yoga is a slow-paced style of yoga with postures, or asanas, that are held for longer periods of time—for beginners, it may range from 45 seconds to two minutes; more advanced practitioners may stay in one asana for five minutes or more."
+  "description" => "Yin Yoga is a slow-paced style of yoga with postures, or asanas, that are held for longer periods of time—for beginners, it may range from 45 seconds to two minutes; more advanced practitioners may stay in one asana for five minutes or more.",
+  "capacity" => 10
   })
 
 activity1.save()
@@ -59,7 +60,8 @@ activity1.save()
 activity2 = Activity.new({
   "activity_name" => "Rocket",
   "category" => "Advanced",
-  "description" => "Rocket Yoga is a yoga sequence developed by Larry Schultz in San Francisco during the 1980s. ROCKET is rooted in the Ashtanga Vinyasa Yoga practice of yoga. Schultz's yoga method was first called 'The ROCKET' by Bob Weir ofThe Grateful Dead, because Weir said, 'It gets you there faster.' "
+  "description" => "Rocket Yoga is a yoga sequence developed by Larry Schultz in San Francisco during the 1980s. ROCKET is rooted in the Ashtanga Vinyasa Yoga practice of yoga. Schultz's yoga method was first called 'The ROCKET' by Bob Weir of The Grateful Dead, because Weir said, 'It gets you there faster.' ",
+  "capacity" => 10
   })
 
 activity2.save()
@@ -67,16 +69,18 @@ activity2.save()
 activity3 = Activity.new({
   "activity_name" => "Vinyasa",
   "category" => "Intermediate",
-  "description" => "Vinyasa Yoga, or Flow Yoga, describes yoga when it consists of a dynamic sequence of poses connected to the breath. Sun salutations are the most well-known kind of vinyasa sequence. Each inhale and exhale goes along with a specific movement. That doesn’t mean that you won’t stay in an asana longer than one breath in a Vinyasa class, but there will be more emphasis on the sequence itself and transitions between each asana."
-  })
+  "description" => "Vinyasa Yoga, or Flow Yoga, describes yoga when it consists of a dynamic sequence of poses connected to the breath. Sun salutations are the most well-known kind of vinyasa sequence. Each inhale and exhale goes along with a specific movement. That doesn’t mean that you won’t stay in an asana longer than one breath in a Vinyasa class, but there will be more emphasis on the sequence itself and transitions between each asana.",
+  "capacity" => 10
+})
 
 activity3.save()
 
 activity4 = Activity.new({
   "activity_name" => "Power",
   "category" => "Intermediate",
-  "description" => "Power Yoga is a general term used to describe a vigorous, fitness-based approach to vinyasa-style yoga. Though many consider power yoga to be superficial 'gym yoga,' this style of yoga practice was originally closely modeled on the Ashtanga method. Power yoga incorporates the athleticism of Ashtanga, including lots of vinyasas (series of poses done in sequence) but gives each teacher the flexibility to teach any poses in any order, making every class different. With its emphasis on strength and flexibility, power yoga brought yoga into the gyms of America as people began to see yoga as a way to work out."
-  })
+  "description" => "Power Yoga is a general term used to describe a vigorous, fitness-based approach to vinyasa-style yoga. Though many consider power yoga to be superficial 'gym yoga,' this style of yoga practice was originally closely modeled on the Ashtanga method. Power yoga incorporates the athleticism of Ashtanga, including lots of vinyasas (series of poses done in sequence) but gives each teacher the flexibility to teach any poses in any order, making every class different. With its emphasis on strength and flexibility, power yoga brought yoga into the gyms of America as people began to see yoga as a way to work out.",
+  "capacity" => 10
+})
 
 activity4.save()
 

@@ -8,7 +8,8 @@ CREATE TABLE activities
   id SERIAL8 PRIMARY KEY,
   activity_name VARCHAR(255),
   category VARCHAR(255),
-  description TEXT
+  description TEXT,
+  capacity INT4
 );
 
 CREATE TABLE members
